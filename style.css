@@ -1,0 +1,119 @@
+/* Footer sections in a column */
+.footer-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* General Page Style */
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif,
+    sans-serif;
+  background: #f0f8ff;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h4 {
+  color: red;
+  font-weight: normal;
+}
+
+h2 {
+  color: #0077b6; /*  a blue shade */
+}
+
+h1 {
+  color: #0077b6; /* A blue shade */
+  margin-bottom: 10px;
+}
+
+/* Grid Layout */
+.container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Top Large Box */
+.top-section {
+  display: grid;
+  grid-template-columns: 1.2fr 2.5fr; /* More space for both sides */
+  background: #d0ebff;
+  border: 2px solid #4a90e2;
+  border-radius: 15px;
+  padding: 40px 10px;
+  align-items: center;
+}
+
+/* Circle Profile Placeholder */
+.profile-pic img {
+  background: #4a90e2;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: auto;
+  border: 4px solid #2e6fb2;
+  margin-left: 24px;  /* Adjusted margin for better alignment */
+}
+
+/* About Text */
+.about {
+  padding-left: 8px;
+}
+
+/* Bottom Boxes */
+.hobbies,
+.aspiration {
+  background: #d0ebff;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #0097a7;
+}
+
+/* Two Equal Boxes */
+.hobbies,
+.aspiration {
+  grid-column: span 3;
+}
+.container {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "top top"
+    "hobbies aspiration";
+}
+
+.top-section {
+  grid-area: top;
+}
+.hobbies {
+  grid-area: hobbies;
+}
+.aspiration {
+  grid-area: aspiration;
+}
+
+/* Responsive Layout for Small Screens */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "top"
+      "hobbies"
+      "aspiration";
+  }
+
+  .top-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about {
+    padding-left: 0;
+    margin-top: 15px;
+  }
+}
